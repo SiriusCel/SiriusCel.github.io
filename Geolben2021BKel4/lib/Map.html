@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<style>
+		#map {position: absolute;top: 0;bottom: 0;left: 0;right: 0;}
+	</style>
+</head>
+<body>
+	<div id = "map"></div>
+	<script>
+		var map = L.map('map').setView([-2,117.54583], 5);
+		L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=aXy35nNu5ntqvbt7fLJB', {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}).addTo(map);
+
+		var leafletIcon = L.icon ({
+			iconUrl: './images/volcano.png',
+			iconSize: [14,16],
+			popupAnchor: [-1,-8],
+		})
+
+		var marker = 
+		//Gunung Merapi
+		L.marker([-7.540831, 110.444817],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup(" <hl><b> Gunung Merapi </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2910 m <br> Erupsi terakhir: Berlanjut hingga saat ini <br> <br> Merapi merupakan salah satu gunung berapi teraktif di Indonesia. Ia terletak di wilayah utara Yogyakarta. Erupsi piroklastik serta aliran lahar yang cenderung terjadi pada sisi barat hingga selatan gunung ini ini telah menyebabkan banyak kerusakan baik pada wilayah pertanian maupun pada pemukiman, serta menyebabkan banyak korban jiwa. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Merapi (263250). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution. </p>");
+		//Gunung Sinabung
+		L.marker([3.17, 98.392],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup(" <hl><b> Gunung Sinabung </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2460 m <br> Erupsi terakhir: Berlanjut hingga saat ini <br> <br> Sinabung merupakan gunung berapi strato di wilayah Sumatera Utara. Tidak ada erupsi historis yang terkonfirmasi dari gunung api ini sebelum erupsi yang terjadi pada tahun 2010. Meskipun secara historis ia tidak tampak aktif meletus, gunung api ini teramati meletus secara berkala sejak erupsi tahun 2010 hingga saat penulisan laman ini (Juni 2021). <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Sinabung (261080). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 25 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 </p>");
+		//Gunung Semeru
+		L.marker([-8.108, 112.92],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup(" <hl><b> Gunung Semeru </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 3657 m <br> Erupsi terakhir: Berlanjut hingga saat ini <br> <br> Gunung Semeru terkenal sebagai gunung tertinggi di Pulau Jawa. Gunung api ini tercatat mengalami erupsi dari abad ke-19, yang mana tipe erupsinya bervariasi dari aliran lava hingga erupsi yang lebih eksplosif yang disertai dengan aliran piroklastik. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Semeru (263300). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 25 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 </p>");
+		//Peuet Sague
+		L.marker([4.914,  96.329],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Peuet Sague </b></hl> <p> Tipe gunung api: Complex Volcano <br> Elevasi puncak: 2801 m <br> Erupsi terakhir: 8 Januari 2001 <br> <br> Kompleks volkano yang terletak pada barat laut Sumatera, memiliki empat puncak. <br> <br> <b>Referensi:</b> <br> Global Volcanism Program. (2013). Pauet Sague. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=261030. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Suoh
+		L.marker([-5.25, 104.27],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Suoh </b></hl> <p> Tipe gunung api: Caldera <br> Elevasi puncak: 1000 m <br> Erupsi terakhir: 1933 <br> <br> Memiliki dome maar dan silika pada batas depresi pada Sesar Besar Sumatera. Pada depresi ini juga terdapat banyak sumber mata air panas. Letusan hidrotermal pada Februari 2014 karena adanya gempa membentuk dua kawah selebar 5 m. <br> <br> <b> Referensi: </b> </br> Global Volcanism Program. (2013). Suoh. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=261270. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Krakatau
+		L.marker([-6.102, 105.423],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Krakatau </b></hl> <p> Tipe gunung api: Caldera <br> Elevasi puncak: 813 m <br> Erupsi terakhir: 17 Apr 2020 <br> <br> Gunung berapi yang dikenal dengan letusannya yang dahsyat, seperti letusan pada tahun 1883 yang merupakan letusan terbesar kedua di Indonesia yang tercatatat dalam sejarah. Sekarang, Krakatau dikenal sebagai Anak Krakatau. <br> <br> <b> Referensi: </b> </br> Global Volcanism Program. (2013). Krakatau. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=262000. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Gunung Gede
+		L.marker([-6.78, 106.98],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Gede </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2958 m <br> Erupsi terakhir: 13 Mar 1957 <br> <br> Gunung Gede merupakan salah satu gunung api terbesar di Jawa Barat, membentuk gunung api kembar dengan Gunung Api Pangrango pada arah barat laut. Gunung Gede termasuk ke dalam <i>UNESCO Biosphere Reserve property</i>. <br> <br> <b> Referensi: </b> </br> Global Volcanism Program. (2013). Gede-Pangrango. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=263060. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Tangkuban Parahu
+		L.marker([-6.77, 107.60],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Tangkuban Parahu </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2084 m <br> Erupsi terakhir: 17 Sep 2019 <br> <br> Terletak di Cikole, Lembang, gunung api ini merupakan tempat wisata yang sering dikunjungi meskipun masih aktif. <br> <br> <b> Referensi: </b> </br> Global Volcanism Program. (2013). Tangkuban Parahu. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=263090. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Galunggung
+		L.marker([-7.25, 108.058],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Galunggung </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2168 m <br> Erupsi terakhir: 9 Jan 1984 <br> <br> Memiliki kaldera berbentuk ladam pada bagian barat daya. Menurut catatan, gunung api ini jarang mengalami erupsi, pun erupsinya terbatas pada bagian tengah di dekat dinding kaldera, namun erupsinya tetap mematikan -- erupsi yang pertama tercatat pada tahun 1822 menghasilkan aliran piroklastik dan lahar yang memakan korban sebanyak kurang lebih 4000 jiwa. <br> <br> <b> Referensi: </b> </br> Global Volcanism Program. (2013). Galunggung. Smithsonian Institution. Diakses pada 22 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=263140&vtab=Eruptions. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+		//Gunung Muria
+		L.marker([-6.6000, 110.8833],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Muria </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1625 m <br> Erupsi terakhir: 160 SM <br> <br> Gunung Muria merupakan gunung berapi yang terletak di Jawa Tengah. Berdasarkan kajian dari McBirney et.al. (2003) menjelaskan bahwa dengan memperhatikan beberapa aspek seperti dari rekaman kejadian vulkanik, manifestasi magmatik, sejarah letusan serta gelogi pusat letuan disimpulkan bahwa gunung muria termasuk ke dalam <i>capable vulcano</i> atau dimungkinkan dapat terjadi erupsi kembali. Batuan penyusun utama gunung Muria diantaranya Trachybasalt, Basaltic Andesite. <br> <br> <b> Referensi: </b> <br> Sunarko. (2016). Kajian Probabilistik Jatuhan Abu Vulkanik Terhadap Tapak Pembangkit Listrik Tenaga Nuklir (PLTN) Muria. Jakarta:Pusat Kajian Sistem Energi Nuklir - BATAN. Diakses pada 24 Juni 2021 dari https://core.ac.uk/download/pdf/298081079.pdf. </p>");
+
+		//Gunung Kelud
+		L.marker([-7.935, 112.313888],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup(" <hl><b> Gunung Kelud </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1731 m <br> Erupsi terakhir: 10 Februari 1990 <br> <br> Gunung Kelud menjadi salah satu dari bagian gunugapi tergolong ke dalam letusan paling mematikan di Indonesia. Gunung ini terletak sekitar 90 km dari kota Surabaya. Selain itu, erupsi gunung kelud menghasilkan letusan berulang dengan memulai erupsinya mengeluarkan air dari danau kawah yang akhirnya menghasilkan lahar dengan pembentukan aliran piroklastik. <br> <br> <b> Referensi: </b> <br> Seach, John. (n.d). Kelut Volcano. Diakses pada 24 Jun 2021 dari http://volcanolive.com/kelut.html. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Tengger Caldera (Gunung Bromo)
+		L.marker([-7.941667, 112.95],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup(" <hl><b> Tengger Caldera (Gunung Bromo) </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2329 m <br> Erupsi terakhir: Juli 2019 <br> <br> Berdasarkan informasi dari PVMBG dan VAAC (2019), <i>pyroclastic cone</i> gunung Bromo yang terletak di dalam Tengger Kaldera sering mengalami erupsi yang menghasilkan gas - steam plumes, ash plumes dan ledakan. Menurut PVMBG dan Volcano Observatory Notice for Aviation (VONA), erupsi yang terjadi pada tahun 2019 menghasilkan tiga getaran vulkanik dangkal. <br> <br> <b> Referensi: </b> <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. <br> Venzke, Edward. (2019). <i>Report on Tengger Caldera (Indonesia)</i>. Washington, D.C.: Smisthsonian Insititution. Diakses pada 24 Juni 2021 dari https://volcano.si.edu/showreport.cfm?doi=10.5479%2Fsi.GVP.BGVN201908-263310. </p>");
+		//Raung
+		L.marker([-8.125, 114.042],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Raung </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 3332 m <br> Erupsi terakhir: 2021 <br> <br> Gunung Raung merupakan gunung api aktif yang terletak di Jawa Timur. Tercatat telah terjadi 60 kali letusan sejak abad ke-16. Letusan umumnya mengeluarkan lava flows yang berasal dari cinder cone, ash plumes, dan adanya aktivitas strombolian. Dominan akan batuan basaltic dan andesitic. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Ijen. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=263350. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Ijen
+		L.marker([-8.058, 114.242],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Ijen </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2799 m <br> Erupsi terakhir: 28 Juni 1999 <br> <br> Gunung Ijen terletak di perbatasan Kabupaten Banyuwangi dan Bondowoso, Jawa Timur. Gunung ini seringkali dijadikan tempat pendakian. Selain itu, terdapat wisata lain berupa kawah yang ramai akan pengunjung. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Ijen. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=263350. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Agung
+		L.marker([-8.342, 115.508],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Agung </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 3142 m <br> Erupsi terakhir: 13 Juni 2019 <br> <br> Gunung Agung merupakan gunung api aktif yang terletak di Kabupaten Karangasem, Bali.  Salah satu letusan besar yang pernah tercatat di Indonesia dengan memakan korban jiwa sebanyak 1600 orang.  <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Agung. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264020. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Rinjani
+		L.marker([-8.42, 116.47],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Rinjani </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 3726 m <br> Erupsi terakhir: 27 September 2016 <br> <br> Gunung Rinjani terletak di Lombok, Nusa Tenggara Barat. Salah satu gunung yang seringkali menjadi incaran para pendaki. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Rinjani. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264030. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Tambora
+		L.marker([-8.25, 118.00],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Tambora </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2850 m <br> Erupsi terakhir: 1967 <br> <br> Gunung Tambora terletak di Sumbawa, Nusa Tenggara Barat. Letusannya pada tahun 1815 tercatat sebagai letusan terdahsyat dan mematikan sepanjang sejarah dengan memakan korban jiwa sebanyak 71.000. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Tambora. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264040. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Sangeang Api
+		L.marker([-8.20, 119.07],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Sangeang Api </b></hl> <p> Tipe gunung api: Complex Volcano <br> Elevasi puncak: 1949 m <br> Erupsi terakhir: July 2020 <br> <br> Gunung Sangeang Api terletak di Sumbawa, Nusa Tenggara Barat. Gunung yang dominan akan batuan Trachybasalt / Tephrite Basanite.  <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Sangeang Api. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264050. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+		//Ranakah
+		L.marker([-8.62, 120.52],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Ranakah </b></hl> <p> Tipe gunung api: Lava domes <br> Elevasi puncak: 2350 m <br> Erupsi terakhir: Maret 1991 <br> <br> Gunung Ranakah terletak di Manggarai, Nusa Tenggara Timur.  Terdapat sumber daya berupa pasir dan batuan yang berasal dari endapan lava yang dijadikan lahan tambang bagi penduduk. Selain itu terdapat pula energi geothermal yang dijadikan sumber pembangkit tenaga listrik. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Ranakah. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264071. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+
+		//Ebulobo
+		L.marker([-8.82, 121.18],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Ebulobo </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 2124 m <br> Erupsi terakhir: 27 Februari 1969 <br> <br> Gunung Ebulobo terletak di selatan Pulau Flores dan selatan Kota Ende, Nusa Tenggara Timur. Gunung ini dominan akan batuan Andesite / Basaltic Andesite.  <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Ebulobo. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264100. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+
+		//Iya
+		L.marker([-8.897, 121.645],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Iya </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 637 m <br> Erupsi terakhir: 27 Januari 1969 <br> <br> Gunung Iya terletak di selatan Pulau Flores dan selatan Kota Ende, Nusa Tenggara Timur. Gunung yang dominan akan batuan Basalt / Picro-Basalt. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Iya. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264110. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+
+		//Paluweh
+		L.marker([-8.32, 121.708],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Paluweh </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 875 m <br> Erupsi terakhir: 12 Agustus 2013 <br> <br> Gunung Paluweh atau Rokatenda terletak di utara Pulau Flores, Nusa Tenggara Timur.  Pada 1928 terjadi letusan hebat yang diakibatkan oleh tsunami susulan dari gempabumi, kejadian ini mengakibatkan sekitar 300 korban meninggal dunia. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Paluweh. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264150. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+
+		//Gunung Lewotobi
+		L.marker([-8.542, 122.775],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Lewotobi </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1703 m <br> Erupsi terakhir: 31 Agustus 2003 <br> <br> Gunung Lewotobi merupakan gunung kembar yang terletak di Flores Timur, Nusa Tenggara Timur. Kenampakannya cukup unik dimana terdapat kawah di puncak gunungnya dan pada bagian dasar kawah terdapat kubah lava. <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Lewotobi. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264180. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+
+		//Gunung Iliwerung
+		L.marker([-8.53, 123.57],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Iliwerung </b></hl> <p> Tipe gunung api: Complex Volcano <br> Elevasi puncak: 1018 m <br> Erupsi terakhir: 20 Agustus 2013 <br> <br> Gunung Iliwerung merupakan salah satu gunung api aktif yang terletak di Lembata, Nusa Tenggara Timur. Dijadikan sebagai salah satu tempat wisata dan bagian dari Festival Tiga Gunung. Gunung ini dominan akan batuan bersifat Basalt / Picro-Basalt <br> <br> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Iliwerung. Smithsonian Institution. Diakses pada 24 Jun 2021 dari https://volcano.si.edu/volcano.cfm?vn=264250. <br> Siebert, L.; Simkin, T.; Kimberly, P. (2010). <i>Volcanoes of the World 3rd Ed</i>. Washington, D.C.: Smisthsonian Insititution. </p>");
+
+				//Banda Api
+		L.marker([-4.521972886153128, 129.879228785874],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Banda Api </b></hl> <p> Tipe gunung api: Stratovolcano & kaldera <br> Elevasi puncak: 596 m <br> Erupsi terakhir: 17 Mei 1988 <br> <br> Gunung api ini membentuk sebuah pulau vulkanik kecil pada Laut Banda. Gunung api ini tercatat pernah mengalami erupsi yang bersifat eksplosif maupun yang berupa aliran lava. </p> <b> Referensi: </b> <br> Referensi: </b> <br> Global Volcanism Program. (2013). Banda Api (265090). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Teon
+		L.marker([-6.968069562514972, 129.14417593427996],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Teon </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 728 m <br> Erupsi terakhir: 3 Juni 1904 <br> <br> Gunung Teon membentuk sebuah pulau vulkanik pada busur Banda. Gunung ini pernah membentuk aliran piroklastik pada 1660 dan menyebabkan banyak kerusakan serta korban jiwa. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Teon (265050). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Colo
+		L.marker([-0.1722079661044268, 121.61130851633901],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Colo </b></hl> <p> Tipe gunung api: Stratovolcano & kaldera <br> Elevasi puncak: 404 m <br> Erupsi terakhir: 16 Desember 1983 <br> <br> Gunung Colo membentuk sebuah pulau vulkanik pada Teluk Tomini. Erupsi terakhir gunung ini membentuk aliran piroklastik yang memaksa penduduk pulau ini untuk mengungsi. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Colo (266010). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Soputan
+		L.marker([1.1143288228669204, 124.73748872656282],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Soputan </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1785 m <br> Erupsi terakhir: 2 April 2020 <br> <br> Gunung ini merupakan sebuah stratovolcano di sisi utara Sulawesi. Ia merupakan sumber aliran lava hingga tahun 1924. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Soputan (266030). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Lokon-Empung
+		L.marker([1.3638744768061044, 124.79902401910408],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Lokon-Empung </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1580 m <br> Erupsi terakhir: 28 September 2015 <br> <br> Gunung ini merupakan gunung berapi kembar di wilayah Tondano. Erupsi dari gunung ini tercatat menyebabkan kerusakan pada wilayah pertanian dan pemukiman. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Lokon-Empung (266100). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Ruang
+		L.marker([2.3054886213512593, 125.3663948775794],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Ruang </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 725 m <br> Erupsi terakhir: 29 September 2002 <br> <br> Gunung ini merupakan gunung berapi di busur Kepulauan Sangihe. Namanya yang mirip dengan Gunung Raung membuat gunung ini sering tertukar dengan gunung tersebut. Gunung ini sudah tercatat mengalami erupsi sejak 1808. Erupsi dari gunung ini cenderung membentuk alira piroklastik yang merusak wilayah pemukiman di sekitarnya. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Ruang (267010). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Karangetang
+		L.marker([2.780350891690886, 125.40633377238848],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Karangetang </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1797 m <br> Erupsi terakhir: Berlanjut hingga saat ini <br> <br> Gunung Karangetang (Api Siau) merupakan gunung api pada Pulau Siau. Erupsi dari gunung api ini cenderung ditandai dengan pembentukan kubah lava yang kemudian runtuh menjadi aliran piroklastik. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Karangetang (267020). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Awu
+		L.marker([3.6819337572591646, 125.45400582477191],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Awu </b></hl> <p> Tipe gunung api: Stratovolcano & kaldera <br> Elevasi puncak: 1318 m <br> Erupsi terakhir: 16 Agustus 2004 <br> <br> Gunung Awu merupakan sebuah stratovolcano di sisi utara Pulau Sangihe dan sekaligus gunung api terbesar di busur kepulauan tersebut. Gunung ini telah tercatat berkali-kali membentuk erupsi piroklastik yang menyebabkan banyak korban jiwa sejak 1711. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Awu (267040). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Gamalama
+		L.marker([0.8100247839735304, 127.33230309818516],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Gamalama </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1715 m <br> Erupsi terakhir: 6 Oktober 2018 <br> <br> Gunung Gamalama merupakan stratovolcano yang membentuk hampir keseluruhan Pulau Ternate. Gunung ini terakhir mengalami erupsi piroklastik pada tahun 2003. </p> <b> Referensi: </b> <br>  Global Volcanism Program. (2013). Gamalama (268060). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+		//Makian
+		L.marker([0.3231078880354474, 127.39721423297934],{icon:leafletIcon})
+		.addTo(map)
+		.bindPopup("<hl><b> Gunung Makian </b></hl> <p> Tipe gunung api: Stratovolcano <br> Elevasi puncak: 1357 m <br> Erupsi terakhir: 5 Agustus 1988 <br> <br> Gunung Makian merupakan bagian dari busur vulkanik Halmahera. Meskipun gunung api ini jarang mengalami erupsi, kerusakan yang dibentuk oleh erupsi tersebut menyebabkan banyak kerusakan dan korban jiwa. </p> <b> Referensi: </b> <br> Global Volcanism Program. (2013). Makian (268070). <i> Volcanoes of the World</i>. Smithsonian Institution. Diakses pada 18 Juni 2021 dari https://doi.org/10.5479/si.GVP.VOTW4-2013 <br> Siebert, L., Simkin, T. & Kimberly, P. (2010). <i>Volcanoes of the world</i>. Washington, D.C.: Smithsonian Institution.");
+	</script>
+</body>
+</html>
